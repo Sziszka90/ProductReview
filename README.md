@@ -25,6 +25,8 @@ Update is not yet supported.
     
 ## Configuration
 
+You can use Postman script to test the endpoints.
+
 Configuration in appsettings.json:
 
 ```json
