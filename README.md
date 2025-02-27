@@ -79,7 +79,6 @@ Szeretném egyből a hiányosságokkal kezdeni, sajnos nekem is limitált volt a
 - Loggolás
 - Docker image készítése
 - Swagger
-- A felhasználó nem fogja látni posztolás előtt a legaktuálisabb review-kat.
 - Tesztek írása ( unit, integration )
 - Még sosem használtam noSQL DB-t, ezért a partitionKey használata nem feltétlenül a legjobb megoldás.
 - README.md-t nem szoktam írni, így azon még dolgoznék.
@@ -92,6 +91,8 @@ Feltételezve, hogy nagyon sok review és product van paginationt használtam.
 
 A reviewknál a rowKey egy idő bélyeg. Sajnos nem sikerült megoldani, hogy a legfrissebb review-kat kapjam vissza. 
 Elvileg RowKey alapján rendezi sorba, de sehogy sem sikerült. Memory-ban meglehetne oldani, de akkor a pagination lenne felesleges.
+
+A felhasználó nem fogja látni posztolás előtt a legaktuálisabb review-kat. Ehhez lekéne menteni, hogy mikor történt query és amikor posztolni akar, akkor ellenőrizni, hogy ebben az időtartamban történt-e új review. 
 
 Feedback:
 
