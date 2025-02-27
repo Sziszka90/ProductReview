@@ -77,10 +77,9 @@ Szeretném egyből a hiányosságokkal kezdeni, sajnos nekem is limitált volt a
 
 - overall hiba kezelés, akár központi middleware segítségével, akár Result objectekkel.
 - Loggolás
-- InitAsync nem feltétlenül lenne a TableClientFactory-ban
 - Docker image készítése
 - Swagger
-- A felhasználó nem fogja látni posztolás előtt a legaktuálisabb review-kat
+- A felhasználó nem fogja látni posztolás előtt a legaktuálisabb review-kat.
 - Tesztek írása ( unit, integration )
 - Még sosem használtam noSQL DB-t, ezért a partitionKey használata nem feltétlenül a legjobb megoldás.
 - README.md-t nem szoktam írni, így azon még dolgoznék.
