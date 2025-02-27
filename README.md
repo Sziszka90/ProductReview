@@ -18,11 +18,8 @@ Update is not yet supported.
 
 ## Installation
 
-Install my-project with npm
-
 ```bash
-  cd my-project
-  dotnet restore
+  cd ProductReview
   dotnet run
 ```
     
