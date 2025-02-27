@@ -38,7 +38,7 @@ Configuration in appsettings.json:
 
 Supported endpoints:
 
-**GET** - /api/products?pageNumber=5&pageSize=3
+**GET** - /api/products?pageNumber={pageNumber}&pageSize={pageSize}
 
 
 **POST** - /api/products 
@@ -52,8 +52,7 @@ Supported endpoints:
 
 **DELETE** - /api/products/{category}/{productName} 
 
-**GET** - /api/products/{productName}/reviews?pageNumber=5&pageSize=3
-
+**GET** - /api/products/{productName}/reviews?pageNumber={pageNumber}&pageSize={pageSize}
 
 **POST** - /api/products/{productName}/reviews 
 
