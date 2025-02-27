@@ -1,0 +1,177 @@
+{
+	"info": {
+		"_postman_id": "5098bd9b-fb39-4712-b020-be48eb329ecf",
+		"name": "ProductReview API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11654352"
+	},
+	"item": [
+		{
+			"name": "Create Product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Baba\",\r\n    \"category\": \"toy\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5164/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5164",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5164/api/products?pageSize=4&pageNumber=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5164",
+					"path": [
+						"api",
+						"products"
+					],
+					"query": [
+						{
+							"key": "pageSize",
+							"value": "4"
+						},
+						{
+							"key": "pageNumber",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Product",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5164/api/products/toy/Baba",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5164",
+					"path": [
+						"api",
+						"products",
+						"toy",
+						"Baba"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Review",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"reviewContent\": \"This is a very nice Baba\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5164/api/products/Baba/reviews",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5164",
+					"path": [
+						"api",
+						"products",
+						"Baba",
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Reviews",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5164/api/products/Baba/reviews?pageSize=10&pageNumber=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5164",
+					"path": [
+						"api",
+						"products",
+						"Baba",
+						"reviews"
+					],
+					"query": [
+						{
+							"key": "pageSize",
+							"value": "10"
+						},
+						{
+							"key": "pageNumber",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Review",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/products/Baba/reviews/84e49532-d502-4312-aa6b-ff14e851b579",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"products",
+						"Baba",
+						"reviews",
+						"84e49532-d502-4312-aa6b-ff14e851b579"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
