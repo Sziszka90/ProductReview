@@ -1,7 +1,7 @@
 ﻿
 # Product Review Service
 
-This service allows users to view, write and delete reviews for a products.
+This service allows users to view, write and delete reviews for products.
 Pagination is supported for both entities.
 Update is not yet supported.
 
