@@ -11,7 +11,7 @@ Update is not yet supported.
 
 
 
-**Backend:** .NET8
+**Backend:** .NET 8
 **Tests:** Postman
 
 
@@ -83,6 +83,7 @@ Szeretném egyből a hiányosságokkal kezdeni, sajnos nekem is limitált volt a
 - Swagger
 - Tesztek írása ( unit, integration )
 - Még sosem használtam noSQL DB-t, ezért a partitionKey használata nem feltétlenül a legjobb megoldás.
+- validáció
 - README.md-t nem szoktam írni, így azon még dolgoznék.
 
 A feladat készítése során próbáltam valamilyen formán kialakítani egy clean architecture-t, természetesen a clean code szabályait betartva.
