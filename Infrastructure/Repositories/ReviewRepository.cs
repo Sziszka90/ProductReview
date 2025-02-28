@@ -26,7 +26,7 @@ public class ReviewRepository : IReviewRepository
 
     public async Task DeleteAllForProductAsync(string productName)
     {
-        await foreach (var entity in _tableClient.QueryAsync<TableEntity>(e => e.PartitionKey == productName))
+        await foreach (var entity in _tableClient.QueryAsync<Review>(e => e.PartitionKey == productName))
         {
             await _tableClient.DeleteEntityAsync(entity.PartitionKey, entity.RowKey);
             Console.WriteLine($"Deleted entity with RowKey: {entity.RowKey}");
