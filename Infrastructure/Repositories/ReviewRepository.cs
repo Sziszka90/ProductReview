@@ -24,9 +24,20 @@ public class ReviewRepository : IReviewRepository
         return await _tableClient.GetEntityAsync<Review>(review.PartitionKey, review.RowKey);
     }
 
-    public async Task<Response> DeleteAsync(string productId, string reviewId)
+    public async Task DeleteAllForProductAsync(string productName)
     {
-        return await _tableClient.DeleteEntityAsync(productId, reviewId);
+        await foreach (var entity in _tableClient.QueryAsync<TableEntity>(e => e.PartitionKey == productName))
+        {
+            await _tableClient.DeleteEntityAsync(entity.PartitionKey, entity.RowKey);
+            Console.WriteLine($"Deleted entity with RowKey: {entity.RowKey}");
+        }
+
+        Console.WriteLine("All entities with the specified PartitionKey have been deleted.");
+    }
+
+    public async Task<Response> DeleteAsync(string productName, string reviewId)
+    {
+        return await _tableClient.DeleteEntityAsync(productName, reviewId);
     }
 
     public async Task<List<Review>> GetReviews(string productName, int pageNumber, int pageSize)

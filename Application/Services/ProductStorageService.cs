@@ -12,11 +12,13 @@ namespace ProductReview.Application.Services;
 public class ProductStorageService : IProductStorageService
 {
     private readonly IProductRepository _productRepository;
+    private readonly IReviewRepository _reviewRepository;
     public readonly IMapper _mapper;
 
-    public ProductStorageService(IProductRepository productRepository, IMapper mapper)
+    public ProductStorageService(IProductRepository productRepository, IReviewRepository reviewRepository, IMapper mapper)
     {
         _productRepository = productRepository;
+        _reviewRepository = reviewRepository;
         _mapper = mapper;
     }
 
@@ -39,9 +41,10 @@ public class ProductStorageService : IProductStorageService
         return _mapper.Map<List<GetProductDto>>(result);
     }
 
-    public async Task<Response> DeleteProduct(string category, string productName)
+    public async Task DeleteProduct(string category, string productName)
     {
-        return await _productRepository.DeleteAsync(category, productName);
+        await _reviewRepository.DeleteAllForProductAsync(productName);
+        await _productRepository.DeleteAsync(category, productName);
     }
 }
 

@@ -28,8 +28,8 @@ public class ReviewsController : ControllerBase
     [HttpDelete("{reviewId}")]
     public async Task<IActionResult> DeleteReview(string productName, string reviewId)
     {
-        var response = await _reviewStorageService.DeleteReview(productName, reviewId);
-        return StatusCode(response.Status, response.Content);
+        await _reviewStorageService.DeleteReview(productName, reviewId);
+        return NoContent();
     }
 
     [HttpGet]

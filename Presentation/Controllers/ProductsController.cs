@@ -26,8 +26,8 @@ public class ProductsController : ControllerBase
     [HttpDelete("{category}/{productName}")]
     public async Task<IActionResult> DeleteProduct(string category, string productName)
     {
-        var response = await _productStorageService.DeleteProduct(category, productName);
-        return StatusCode(response.Status, response.Content);
+        await _productStorageService.DeleteProduct(category, productName);
+        return NoContent();
     }
 
     [HttpGet]
